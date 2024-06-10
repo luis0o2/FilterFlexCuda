@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Uploader</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+        }
+
+        .container {
+            text-align: center; /* Center align text */
+            background-color: #fff; /* White background for container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Box shadow for a little depth */
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%; /* Responsive image width */
+            max-height: 300px; /* Limit image height */
+            border-radius: 10px; /* Rounded corners for the image */
+            margin-top: 20px; /* Spacing between image and download link */
+        }
+
+        a.button {
+            display: inline-block;
+            background-color: #007bff; /* Blue color for the button */
+            color: #fff; /* White text color */
+            padding: 10px 20px; /* Padding for button */
+            text-decoration: none; /* Remove default underline */
+            border-radius: 5px; /* Rounded corners for the button */
+            transition: background-color 0.3s; /* Smooth transition on hover */
+        }
+
+        a.button:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Filter Image</h1>
+        <form action="{{ url_for('index') }}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Upload Image</button>
+        </form>
+        {% if processed_file_path %}
+            <h2>Processed Image:</h2>
+            <img src="{{ url_for('static', filename='processed/' + processed_file_path) }}" alt="Processed Image">
+            <br>
+            <a href="{{ url_for('download_processed_image', filename=processed_file_path) }}" class="button" download>Download Processed Image</a>
+        {% endif %}
+    </div>
+</body>
+</html>
