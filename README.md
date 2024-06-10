@@ -2,13 +2,17 @@
 
 ## Overview
 In this commit, I integrated a CUDA-accelerated C++ program for converting uploaded images to grayscale. Leveraging the power of CUDA, the program efficiently processes each pixel of the image in parallel, significantly reducing processing time compared to traditional CPU-based methods.
--CUDA C++: Utilized for implementing the GPU-accelerated grayscale conversion algorithm.
--STB Image: Employed for image loading and saving functionalities in the CUDA C++ code.
--Python: Used for developing the Flask web application and orchestrating the image processing workflow.
--Flask: A micro web framework in Python used for handling HTTP requests and rendering HTML templates.
--HTML: Used for creating the structure and content of the web pages, including the user interface for image upload and display.
--CSS: Used for styling the HTML elements, including layout, colors, fonts, and other visual aspects of the web pages.
+
 ![image](https://github.com/luis0o2/FilterFlexCuda/assets/59019460/be14d765-7b81-4e8f-99f2-ca6b1d3e1f86)
+
+## Technologies and Tools Used
+- CUDA C++: Implemented the GPU-accelerated grayscale conversion algorithm.
+- STB Image: Utilized for image loading and saving functionalities in the CUDA C++ code.
+- Python: Used for developing the Flask web application and orchestrating the image processing workflow.
+- Flask: A micro web framework in Python used for handling HTTP requests and rendering HTML templates.
+- HTML: Used for creating the structure and content of the web pages, including the user interface for image upload and display.
+- CSS: Used for styling the HTML elements, including layout, colors, fonts, and other visual aspects of the web pages.
+
 
 ## Implementation Details
 To facilitate user interaction, I developed a Flask application using Python, providing a user-friendly interface for uploading images and viewing the grayscale results. The Flask application, defined in `app.py`, handles HTTP requests and orchestrates the image processing workflow.
