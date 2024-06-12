@@ -21,10 +21,11 @@ Additionally, I crafted HTML templates stored in the `templates` directory to re
 
 ## CPU Implementation
 ![image](https://github.com/luis0o2/FilterFlexCuda/assets/59019460/bab50dd3-a3ce-41e4-bfd9-39bbb627b9fd)
+### CPU grayscale conversion time: 1.103 ms
 
 ## GPU Implementation
 ![image](https://github.com/luis0o2/FilterFlexCuda/assets/59019460/e0f40ddc-d234-4cb2-89df-dacd9a3343a2)
-
+### CUDA grayscale conversion time: 0.128704 ms
 
 ## Inspiration from "Programming Massively Parallel Processors"
 This implementation draws inspiration from the concepts discussed in the book "Programming Massively Parallel Processors" by David B. Kirk and Wen-mei W. Hwu. By applying the principles outlined in the book, particularly those related to parallel programming with CUDA, I was able to develop a highly efficient image processing pipeline that takes full advantage of modern GPU architectures.
